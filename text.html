@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,html{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .options{
+            position: relative;
+            height: 50%;
+            width: 100%;
+            background-color: #F5F5F5;
+        }
+        .question{
+            position: relative;
+            width: 80%;
+            left: 10%;
+            top:20px;
+            background-color: rgba(240, 248, 255, 0.663);
+            border: solid black;
+            border-radius: 10px;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .ans{
+            position: relative;
+            width: 80%;
+            height: 130px;
+            left: 10%;
+            top:20px;
+            background-color: rgba(240, 248, 255, 0.663);
+            border: solid BLACK;
+            border-radius: 10px;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            z-index: 10;background: #fff;
+        }
+        .button{
+            position: relative;
+            height: 30px;
+            width: 50%;
+            left: 25%;
+            margin-top: 25px;
+        }
+        .pg-heading{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 750;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="options">
+        <input type="color">
+        <h1 class="pg-heading">Generate client's story here!</h1>
+        <form action="/text.html/text" method="post">
+            <textarea type = "text" id = "text_to_gen" name = "text_to_gen" class = "question" placeholder="Lets Start"></textarea>
+        <button type = "submit" class="button" onclick="sendText()">GO</button>
+        </form>
+        <textarea id="ans" class = "ans" placeholder="Editor's Playground"></textarea>
+    </div>
+    <script>
+        function sendText(){
+            var ans = document.getElementById("ans");
+            ans.innerHTML = "";
+            ans.placeholder = "Generating..."
+        }
+    </script>
+</body>
+</html>
