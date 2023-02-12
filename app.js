@@ -61,6 +61,10 @@ app.get('/text.html', function(req,res){
   res.sendFile(__dirname + '/text.html');
 });
 
+app.get('/order_controler.html', function(req,res){
+  res.sendFile(__dirname + '/order_controler.html');
+});
+
 app.get('/proj.html', function(req,res){
   res.sendFile(__dirname + '/proj.html');
 });
