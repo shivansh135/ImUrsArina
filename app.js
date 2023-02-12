@@ -97,6 +97,11 @@ app.post('/getlayout',function(req,res){
   });
 })
 
+app.get('/leads', function(req,res){
+    drive.searchFiles(id).then(data=> console.log(data[0]));
+    res.sendFile( __dirname + "/order_controler.html" );
+ });
+
 app.post('/getFiles',function(req,res){
   var id = req.body.id;
   drive.searchFiles(id).then(data =>{
@@ -116,9 +121,5 @@ app.post('/updateHtml',function(req,res){
   console.log(response);
 });*/
 
-app.get('/leads', function(req,res){
-    drive.searchFiles(id).then(data=> console.log(data[0]));
-    res.sendFile( __dirname + "/order_controler.html" );
-  });
 
 app.listen(process.env.PORT || 5000);
