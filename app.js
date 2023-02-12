@@ -97,8 +97,7 @@ app.post('/getlayout',function(req,res){
   });
 })
 
-app.get('/leads', function(req,res){
-    drive.searchFiles(id).then(data=> console.log(data[0]));
+app.get('/getleads', function(req,res){
     res.sendFile( __dirname + "/order_controler.html" );
  });
 
